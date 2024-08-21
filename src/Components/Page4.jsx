@@ -30,7 +30,7 @@ function Page4() {
         console.log("userinfo", userinfo);
 
         try {
-            const response = await axios.post('http://localhost:3000/user/create', userinfo);
+            const response = await axios.post('https://my-project-server-xjgw.onrender.com/user/create', userinfo);
             if (response.status === 200) {
                 console.log(response.data.msg);
                 setTimeout(() => {
