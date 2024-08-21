@@ -1,0 +1,15 @@
+{
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "mobile_number": "Mobile Number",
+    "identification_number": "Identification Number",
+    "policy_number": "Policy Number",
+    "error_first_name": "First Name is required",
+    "error_last_name": "Last Name is required",
+    "error_email": "Email is required",
+    "error_mobile_number": "Mobile Number is required",
+    "error_identification_number": "Identification Number is required",
+    "error_policy_number": "Policy Number is required",
+    "next_button": "Next"
+}

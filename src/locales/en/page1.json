@@ -1,0 +1,17 @@
+{
+    "welcom": "Welcome",
+    "title": "Tell us what we can help you with. Select all that apply",
+    "p1": "Pre-Diabetes",
+    "p2": "Postal natal",
+    "p3": "Type 1 Diabetes",
+    "p4": "IBS/IBD",
+    "p5": "Type 2 Diabetes",
+    "p6": "Fatty liver disease",
+    "p7": "Hypertension",
+    "p8": "Disordered eating",
+    "p9": "Weight Management",
+    "p10": "PCOS",
+    "p11": "Cholesterol",
+    "p12": "Other",
+    "next":"Next"
+  }

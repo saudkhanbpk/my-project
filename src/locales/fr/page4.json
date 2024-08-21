@@ -1,0 +1,15 @@
+{
+    "first_name": "Prénom",
+    "last_name": "Nom",
+    "email": "E-mail",
+    "mobile_number": "Numéro de téléphone",
+    "identification_number": "Numéro d'identification",
+    "policy_number": "Numéro de police",
+    "error_first_name": "Le prénom est requis",
+    "error_last_name": "Le nom est requis",
+    "error_email": "L'e-mail est requis",
+    "error_mobile_number": "Le numéro de téléphone est requis",
+    "error_identification_number": "Le numéro d'identification est requis",
+    "error_policy_number": "Le numéro de police est requis",
+    "next_button": "Suivant"
+}
