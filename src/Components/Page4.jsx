@@ -37,11 +37,9 @@ function Page4() {
                     navigate('/page5'); // Navigate to the next page on successful submission
                 }, 500);
                 toast.success("Form submitted Sucessfully"); // Assuming you add this key for success message
-            } else if (response.status === 400) {
-                console.log(response.data.msg);
-            } else if (response.status === 403) {
-                toast.error("Mobile or Email already exist");
-                console.log("user already exists");
+            } else if (response.status === 203) {
+                 toast.error("Mobile Number or Email already exist");
+                
             }
         } catch (error) {
             console.log("Error occurs in frontend not getting data", error);
