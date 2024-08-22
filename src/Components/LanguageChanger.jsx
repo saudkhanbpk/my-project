@@ -31,7 +31,7 @@ function LanguageSwitcher() {
         Select Language
       </h3>
       {showOptions && (
-        <div className="absolute top-10 right-1 flex flex-col items-center bg-white rounded-md shadow-lg p-3 transition duration-300 ease-in-out">
+        <div className="absolute z-10 top-10 right-1 flex flex-col items-center bg-white rounded-md shadow-lg p-3 transition duration-300 ease-in-out">
           <button
             className={`py-2 px-4 mb-2 rounded cursor-pointer transition duration-300 ${selectedLanguage === 'en' ? 'text-blue-500' : 'text-black'}`}
             onClick={() => changeLanguage('en')}

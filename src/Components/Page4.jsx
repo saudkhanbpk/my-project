@@ -60,7 +60,7 @@ function Page4() {
                                         <input
                                             type="text"
                                             name='firstname'
-                                         placeholder={`${errors.firstname ? "":"Enter text here"}`}
+                                         placeholder={`${errors.firstname ? "":t('page4:Enter')}`}
                                             className={`outline-none bg-[#FFFFFF] w-full px-3 font-normal text-zinc-700 ${errors.firstname ? 'border-red-500' : ''}`}
                                             {...register("firstname", { required: true })}
                                         />
@@ -74,7 +74,7 @@ function Page4() {
                                         <input
                                             type="text"
                                             name='lastname'
-                                            placeholder={`${errors.firstname ? "":"Enter text here"}`}
+                                            placeholder={`${errors.lastname ? "":t('page4:Enter')}`}
                                             className={`outline-none bg-[#FFFFFF] w-full px-3 font-normal text-zinc-700 ${errors.lastname ? 'border-red-500' : ''}`}
                                             {...register("lastname", { required: true })}
                                         />
@@ -88,7 +88,7 @@ function Page4() {
                                         <input
                                             type="text"
                                             name='email'
-                                            placeholder={`${errors.firstname ? "":"Enter text here"}`}
+                                            placeholder={`${errors.email ? "":t('page4:Enter')}`}
                                             className={`outline-none bg-[#FFFFFF] w-full px-3 font-normal text-zinc-700 ${errors.email ? 'border-red-500' : ''}`}
                                             {...register("email", { required: true })}
                                         />
@@ -102,7 +102,7 @@ function Page4() {
                                         <input
                                             type="number"
                                             name='mobileno'
-                                            placeholder={`${errors.firstname ? "":"Enter text here"}`}
+                                            placeholder={`${errors.mobileno ? "":t('page4:Enter')}`}
                                             className={`outline-none bg-[#FFFFFF] w-full px-3 font-normal text-zinc-700 ${errors.mobileno ? 'border-red-500' : ''}`}
                                             {...register("mobileno", { required: true })}
                                         />
@@ -115,7 +115,7 @@ function Page4() {
                                         <input
                                             type="number"
                                             name='identino'
-                                            placeholder={`${errors.firstname ? "":"Enter text here"}`}
+                                            placeholder={`${errors.identino ? "":t('page4:Enter')}`}
                                             className={`outline-none bg-[#FFFFFF] w-full px-3 font-normal text-zinc-700 ${errors.identino ? 'border-red-500' : ''}`}
                                             {...register("identino", { required: true })}
                                         />
@@ -128,7 +128,7 @@ function Page4() {
                                         <input
                                             type="number"
                                             name='policyno'
-                                            placeholder={`${errors.firstname ? "":"Enter text here"}`}
+                                            placeholder={`${errors.policyno ? "":t('page4:Enter')}`}
                                             className={`outline-none bg-[#FFFFFF] w-full px-3 font-normal text-zinc-700 ${errors.policyno ? 'border-red-500' : ''}`}
                                             {...register("policyno", { required: true })}
                                         />

@@ -11,5 +11,6 @@
     "error_mobile_number": "Le numéro de téléphone est requis",
     "error_identification_number": "Le numéro d'identification est requis",
     "error_policy_number": "Le numéro de police est requis",
-    "next_button": "Suivant"
+    "next_button": "Suivant",
+    "Enter":"Entrez le texte ici"
 }

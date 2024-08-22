@@ -11,5 +11,6 @@
     "error_mobile_number": "Mobile Number is required",
     "error_identification_number": "Identification Number is required",
     "error_policy_number": "Policy Number is required",
-    "next_button": "Next"
+    "next_button": "Next",
+    "Enter":"Enter text here"
 }
