@@ -5,7 +5,7 @@ import img3 from '../assets/img8.png';
 import img4 from '../assets/img6.png';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -38,7 +38,7 @@ function Page4() {
                 }, 500);
                 toast.success("Form submitted Sucessfully"); // Assuming you add this key for success message
             } else if (response.status === 203) {
-                 toast.error("Mobile Number or Email already exist");
+                return toast.error("Mobile Number or Email already exist");
                 
             }
         } catch (error) {
@@ -60,6 +60,7 @@ function Page4() {
                                         <input
                                             type="text"
                                             name='firstname'
+                                         placeholder={`${errors.firstname ? "":"Enter text here"}`}
                                             className={`outline-none bg-[#FFFFFF] w-full px-3 font-normal text-zinc-700 ${errors.firstname ? 'border-red-500' : ''}`}
                                             {...register("firstname", { required: true })}
                                         />
@@ -73,6 +74,7 @@ function Page4() {
                                         <input
                                             type="text"
                                             name='lastname'
+                                            placeholder={`${errors.firstname ? "":"Enter text here"}`}
                                             className={`outline-none bg-[#FFFFFF] w-full px-3 font-normal text-zinc-700 ${errors.lastname ? 'border-red-500' : ''}`}
                                             {...register("lastname", { required: true })}
                                         />
@@ -86,6 +88,7 @@ function Page4() {
                                         <input
                                             type="text"
                                             name='email'
+                                            placeholder={`${errors.firstname ? "":"Enter text here"}`}
                                             className={`outline-none bg-[#FFFFFF] w-full px-3 font-normal text-zinc-700 ${errors.email ? 'border-red-500' : ''}`}
                                             {...register("email", { required: true })}
                                         />
@@ -99,6 +102,7 @@ function Page4() {
                                         <input
                                             type="number"
                                             name='mobileno'
+                                            placeholder={`${errors.firstname ? "":"Enter text here"}`}
                                             className={`outline-none bg-[#FFFFFF] w-full px-3 font-normal text-zinc-700 ${errors.mobileno ? 'border-red-500' : ''}`}
                                             {...register("mobileno", { required: true })}
                                         />
@@ -111,6 +115,7 @@ function Page4() {
                                         <input
                                             type="number"
                                             name='identino'
+                                            placeholder={`${errors.firstname ? "":"Enter text here"}`}
                                             className={`outline-none bg-[#FFFFFF] w-full px-3 font-normal text-zinc-700 ${errors.identino ? 'border-red-500' : ''}`}
                                             {...register("identino", { required: true })}
                                         />
@@ -123,6 +128,7 @@ function Page4() {
                                         <input
                                             type="number"
                                             name='policyno'
+                                            placeholder={`${errors.firstname ? "":"Enter text here"}`}
                                             className={`outline-none bg-[#FFFFFF] w-full px-3 font-normal text-zinc-700 ${errors.policyno ? 'border-red-500' : ''}`}
                                             {...register("policyno", { required: true })}
                                         />
