@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import img1 from '../assets/img7.png';
 import img2 from '../assets/img4.png';
 import img3 from '../assets/img8.png';
@@ -9,7 +9,7 @@ import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-function Page4() {
+function Page4(props) {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const {
@@ -17,38 +17,54 @@ function Page4() {
         handleSubmit,
         formState: { errors },
     } = useForm();
+const [loading,setLoading]=useState(false)
 
     const onSubmit = async (data) => {
+        console.log(props.diseasesData);
+        
+        setLoading(true)
         const userinfo = {
             email: data.email,
             identino: data.identino,
             firstname: data.firstname,
             lastname: data.lastname,
             mobileno: data.mobileno,
-            policyno: data.policyno
+            policyno: data.policyno,
+            diseases:props.diseasesData
         };
         console.log("userinfo", userinfo);
 
         try {
+           
             const response = await axios.post('https://my-project-server-xjgw.onrender.com/user/create', userinfo);
             if (response.status === 200) {
-                console.log(response.data.msg);
-                setTimeout(() => {
-                    navigate('/page5'); // Navigate to the next page on successful submission
-                }, 500);
+              
+                navigate('/page5'); // Navigate to the next page on successful submission
+              
                 toast.success("Form submitted Sucessfully"); // Assuming you add this key for success message
+                setLoading(false)
             } else if (response.status === 203) {
-                return toast.error("Mobile Number or Email already exist");
-                
+                setLoading(false)
+                toast.error("Mobile Number or Email already exist");
+ 
+                return                
             }
         } catch (error) {
+            setLoading(false)
             console.log("Error occurs in frontend not getting data", error);
+        }
+        finally{
+            setLoading(false)
         }
     };
 
     return (
         <>
-            <form onSubmit={handleSubmit(onSubmit)}>
+        {loading?( <div className='w-full mt-40 justify-center  flex '> <div className="w-10 h-10 border-8  border-blue-300 border-t-blue-700 rounded-full animate-spin"></div></div>)
+        
+        :(
+                
+       <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='h-[88vh] w-full bg-[#ECECEC] p-10'>
                     <div className='flex flex-col gap-5 sm:flex-row items-center justify-center lg:px-20 w-full'>
                         <div className='lg:w-1/2 w-full flex justify-center'>
@@ -146,6 +162,7 @@ function Page4() {
                     </div>
                 </div>
             </form>
+    )}
         </>
     );
 }

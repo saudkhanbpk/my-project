@@ -14,9 +14,19 @@ import img12 from '../assets/Vector.png';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-function Page_1() {
+function Page_1(props) {
     const { t } = useTranslation();
-    const [selectedDiv, setSelectedDiv] = useState(null);
+    const [selectedDivs, setSelectedDivs] = useState([]);
+    
+    const handleSelection = (index) => {
+        setSelectedDivs(prevSelectedDivs => {
+            if (prevSelectedDivs.includes(index)) {
+                return prevSelectedDivs.filter(i => i !== index);
+            } else {
+                return [...prevSelectedDivs, index];
+            }
+        });
+    };
 
     const divs = [
         { img: img1, text: t('page1:p1') },
@@ -33,8 +43,10 @@ function Page_1() {
         { img: img12, text: t('page1:p12') },
     ];
 
-    const handleSelection = (index) => {
-        setSelectedDiv(index);
+    const handleNext = () => {
+        const selectedDiseases = selectedDivs.map(index => divs[index].text);
+        console.log(selectedDiseases);
+        props.setDieseaseData(selectedDiseases);
     };
 
     return (
@@ -47,7 +59,7 @@ function Page_1() {
                         {divs.map((div, index) => (
                             <div 
                                 key={index} 
-                                className={`bg-[#FFFFFF] lg:w-[15vw] py-2 px-1 items-center justify-center flex cursor-pointer ${selectedDiv === index ? 'border-2 border-blue-500' : ''}`}
+                                className={`bg-[#FFFFFF] lg:w-[15vw] py-2 px-1 items-center justify-center flex cursor-pointer ${selectedDivs.includes(index) ? 'bg-blue-300' : ''}`}
                                 onClick={() => handleSelection(index)}
                             >
                                 <p className='flex items-center w-full px-3'>
@@ -60,7 +72,7 @@ function Page_1() {
 
                     <div className='flex w-full justify-end px-5 lg:items-end lg:mr-10'>
                         <Link to='/page2'>
-                            <button className='bg-[#F38E73] text-white p-2 px-5 rounded-sm'>{t('page1:next')}</button>
+                            <button onClick={handleNext} className='bg-[#F38E73] text-white p-2 px-5 rounded-sm'>{t('page1:next')}</button>
                         </Link>
                     </div>
                 </div>
@@ -70,4 +82,3 @@ function Page_1() {
 }
 
 export default Page_1;
- 
